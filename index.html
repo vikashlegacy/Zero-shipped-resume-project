@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>0 to Shipped Resume Parser</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>0 to Shipped Resume Parser</h1>
+    <p class="subtitle">Upload your PDF resume and get an instant fit score, plus the skills you have and the ones you're missing.</p>
+  </header>
+
+  <main class="container">
+    <!-- Upload area -->
+    <section class="upload-card" id="uploadCard">
+      <div class="drop-zone" id="dropZone">
+        <div class="drop-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 16V4m0 0L7 9m5-5l5 5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 16v3a3 3 0 003 3h10a3 3 0 003-3v-3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p class="drop-text"><strong>Drop your PDF here</strong> or click to browse</p>
+        <p class="drop-hint">Supports .pdf files up to 5MB</p>
+        <input type="file" id="fileInput" accept="application/pdf" hidden />
+      </div>
+      <div class="file-name" id="fileName"></div>
+      <button class="parse-btn" id="parseBtn" disabled>Parse Resume</button>
+    </section>
+
+    <!-- Results area -->
+    <section class="results-card" id="resultsCard" hidden>
+      <div class="results-header">
+        <h2>Resume Analysis</h2>
+        <button class="reset-btn" id="resetBtn">New Analysis</button>
+      </div>
+
+      <div class="score-section">
+        <div class="score-circle" id="scoreCircle">
+          <span class="score-value" id="scoreValue">0</span><span class="score-max">/100</span>
+        </div>
+        <div class="score-meta">
+          <p class="score-label" id="scoreLabel">Fit Score</p>
+          <p class="score-verdict" id="scoreVerdict">Upload a resume to begin</p>
+        </div>
+      </div>
+
+      <div class="skills-section">
+        <div class="skill-group">
+          <h3 class="skill-title present-title">
+            <span class="dot present"></span> Skills Present
+          </h3>
+          <div class="skill-tags" id="presentSkills"></div>
+        </div>
+        <div class="skill-group">
+          <h3 class="skill-title missing-title">
+            <span class="dot missing"></span> Skills Missing
+          </h3>
+          <div class="skill-tags" id="missingSkills"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>0 to Shipped Resume Parser &mdash; Mock design. No data leaves your browser.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
